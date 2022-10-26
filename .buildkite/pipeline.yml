@@ -7,4 +7,4 @@ steps:
   # See https://github.com/segmentio/imager for more details
   - label: ":docker: Build and Publish container image"
     commands: 
-      - "imager buildpush . -r smsk-kafka-load -d all"
+      - "imager buildpush . -d all --build-arg VERSION_REF=$${BUILDKITE_SHORT_COMMIT}"
