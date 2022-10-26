@@ -2,14 +2,14 @@ apiVersion: platform.segment.com/v1alpha1
 kind: SegmentApplicationExperimental
 cell: core
 metadata:
-  name: smsk-kafka-load
+  name: smsk-kafka-load-producer
   namespace: smsk-kafka-load
 spec:
   targets:
   - name: producer-stage-usw2-dp-sandbox
     cluster: stage:us-west-2:dp-sandbox
     replicatedService:
-      iamRoleName: smsk-kafka-load
+      iamRoleName: smsk-kafka-load-producer
       namespace: smsk-kafka-load
       replicas: 1
       mainContainer:
@@ -23,35 +23,11 @@ spec:
         - "--num-records"
         - "1000000"
         - "--throughput"
-        - "1000"
+        - "100"
         - "--producer-props"
-        - "bootstrap.servers=kafka-1:9092"
+        - "bootstrap.servers=kafka-kafka.dp-sandbox.segment.local:9092"
         - "--record-size"
         - "50"
-        resources:
-          limits:
-            cpu: 0.5
-            memory: 256M
-        ctlstore:
-          disabled: true
-  - name: consumer-stage-usw2-dp-sandbox
-    cluster: stage:us-west-2:dp-sandbox
-    replicatedService:
-      iamRoleName: smsk-kafka-load
-      namespace: smsk-kafka-load
-      replicas: 2
-      mainContainer:
-        image: 528451384384.dkr.ecr.us-west-2.amazonaws.com/smsk-kafka-load:v2.5.1
-        imageName: smsk-kafka-load
-        imageRegistry: 528451384384.dkr.ecr.us-west-2.amazonaws.com
-        command:
-        - "/srv/kafka/bin/kafka-console-consumer.sh"
-        - "--topic"
-        - "test-1"
-        - "--group"
-        - "test-consumer-1"
-        - "--bootstrap-server=kafka-1:9092"
-        - "--from-beginning"
         resources:
           limits:
             cpu: 0.25
