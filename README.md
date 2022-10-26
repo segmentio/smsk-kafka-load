@@ -1,2 +1,4 @@
 # smsk-kafka-load
-load generator producer and consumer for kafka
+
+This is a blank template for smsk-kafka-load
+

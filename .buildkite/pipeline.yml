@@ -1,0 +1,26 @@
+env:
+  SEGMENT_CONTEXTS: aws-credentials
+steps:
+  - label: Install dependencies
+    agents:
+      queue: v1
+    commands:
+      - make deps
+
+  - label: Test
+    agents:
+      queue: v1
+    commands:
+      - make test
+
+  - label: Build
+    agents:
+      queue: v1
+    commands:
+      - make build
+
+  - label: Publish
+    agents:
+      queue: v1
+    commands:
+      - make publish
