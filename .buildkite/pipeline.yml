@@ -2,9 +2,5 @@ env:
   SEGMENT_CONTEXTS: "ecr,aws-credentials"
   SEGMENT_BUILDKITE_IMAGE: 'buildkite-agent-golang1.18'
 steps:
-  # Note the below command will not publish to any ECR repository until one is created. See https://paper.dropbox.com/doc/ECR-Repositories-User-Guide--Baf8qogH~hPrIGo7MYavVkFxAg-mHGOBHgjg6xMEhLWlDBRE#:uid=378901835518799285506068&h2=Creating-repositories
-  # The below command should push to all accounts where that ECR repo is present.
-  # See https://github.com/segmentio/imager for more details
-  - label: ":docker: Build and Publish container image"
-    commands: 
-      - "imager buildpush . -d all --build-arg VERSION_REF=$${BUILDKITE_SHORT_COMMIT}"
+  - label: ":camera_with_flash: Build Image"
+    command: "./build-image.sh"

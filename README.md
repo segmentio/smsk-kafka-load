@@ -1,7 +1,7 @@
 # smsk-kafka-load
 
 
-## Pre-req
+## Pre-req checks
 
 ### log in to docker
 $ aws-okta exec ops-read -- aws ecr get-login-password | docker login --username AWS --password-stdin 528451384384.dkr.ecr.us-west-2.amazonaws.com
