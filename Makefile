@@ -3,9 +3,7 @@ VERSION := "v2.5.1"
 
 .PHONY: docker-build
 docker-build:
-	docker build --build-arg VERSION=$(VERSION) \
-		-t $(ECR_REPO):$(VERSION) \
-		.
+	docker build . -t ${ECR_REPO} -t ${ECR_REPO}:${VERSION}
 
 .PHONY: docker-publish
 docker-publish: docker-build
