@@ -1,15 +1,12 @@
-.PHONY: deps
-deps:
-	@echo "Install Deps"
+ECR_REPO := "528451384384.dkr.ecr.us-west-2.amazonaws.com/smsk-kafka-load"
+VERSION := "v2.5.1"
 
-.PHONY: test
-test:
-	@echo "Perform Tests"
+.PHONY: docker-build
+docker-build:
+	docker build --build-arg VERSION=$(VERSION) \
+		-t $(ECR_REPO):$(VERSION) \
+		.
 
-.PHONY: build
-build:
-	@echo "Build code"
-
-.PHONY: publish
-publish:
-	@echo "Build code"
+.PHONY: docker-publish
+docker-publish: docker-build
+	docker push $(ECR_REPO):$(VERSION)

@@ -1,26 +1,10 @@
 env:
-  SEGMENT_CONTEXTS: aws-credentials
+  SEGMENT_CONTEXTS: "ecr,aws-credentials"
+  SEGMENT_BUILDKITE_IMAGE: 'buildkite-agent-golang1.18'
 steps:
-  - label: Install dependencies
-    agents:
-      queue: v1
-    commands:
-      - make deps
-
-  - label: Test
-    agents:
-      queue: v1
-    commands:
-      - make test
-
-  - label: Build
-    agents:
-      queue: v1
-    commands:
-      - make build
-
-  - label: Publish
-    agents:
-      queue: v1
-    commands:
-      - make publish
+  # Note the below command will not publish to any ECR repository until one is created. See https://paper.dropbox.com/doc/ECR-Repositories-User-Guide--Baf8qogH~hPrIGo7MYavVkFxAg-mHGOBHgjg6xMEhLWlDBRE#:uid=378901835518799285506068&h2=Creating-repositories
+  # The below command should push to all accounts where that ECR repo is present.
+  # See https://github.com/segmentio/imager for more details
+  - label: ":docker: Build and Publish container image"
+    commands: 
+      - "imager buildpush . -r smsk-kafka-load -d all"
