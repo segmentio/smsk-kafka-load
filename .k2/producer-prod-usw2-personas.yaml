@@ -21,13 +21,13 @@ spec:
         - "--topic"
         - "test-1"
         - "--num-records"
-        - "10000000"
+        - "100000000"
         - "--throughput"
-        - "10000"
+        - "30000"
         - "--producer-props"
         - "bootstrap.servers=kafka-kafka-personas.personas.segment.local:9092"
         - "--record-size"
-        - "50"
+        - "200"
         resources:
           limits:
             cpu: 1
