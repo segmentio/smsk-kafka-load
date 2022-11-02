@@ -3,14 +3,14 @@ kind: SegmentApplicationExperimental
 cell: core
 metadata:
   name: smsk-kafka-load-producer
-  namespace: smsk-kafka-test
+  namespace: psm-stage-usw2-load-test
 spec:
   targets:
-  - name: producer-prod-usw2-personas
-    cluster: production:us-west-2:personas
+  - name: producer-stage-usw2-personas
+    cluster: stage:us-west-2:personas
     replicatedService:
       iamRoleName: smsk-kafka-load-producer
-      namespace: smsk-kafka-test
+      namespace: psm-stage-usw2-load-test
       replicas: 1
       mainContainer:
         image: 528451384384.dkr.ecr.us-west-2.amazonaws.com/smsk-kafka-load:v2.5.1
@@ -25,10 +25,10 @@ spec:
         - "--producer-props"
         - "bootstrap.servers=kafka-kafka-personas.personas.segment.local:9092"
         - "--record-size"
-        - "200"
+        - "100"
         resources:
           limits:
-            cpu: 1
+            cpu: 0.5
             memory: 256M
         ctlstore:
           disabled: true
