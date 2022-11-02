@@ -1,31 +1,31 @@
-# deploy - k2 deploy app producer-stage-usw2-dp-sandbox -t producer-stage-usw2-dp-sandbox -b <build> --argocd --skip-checks
-# delete - k2 delete app producer-stage-usw2-dp-sandbox -t producer-stage-usw2-dp-sandbox
+# deploy - k2 deploy app producer-msk-stage-usw2-dp-sandbox -t producer-stage-usw2-dp-sandbox -b <build> --argocd --skip-checks
+# delete - k2 delete app producer-msk-stage-usw2-dp-sandbox -t producer-stage-usw2-dp-sandbox
 apiVersion: platform.segment.com/v1alpha1
 kind: SegmentApplicationExperimental
 cell: core
 metadata:
-  name: smsk-kafka-load-producer
-  namespace: smsk-kafka-load
+  name: msk-kafka-load-producer
+  namespace: msk-kafka-load
 spec:
   targets:
   - name: producer-stage-usw2-dp-sandbox
     cluster: stage:us-west-2:dp-sandbox
     replicatedService:
-      iamRoleName: smsk-kafka-load-producer
-      namespace: smsk-kafka-load
+      iamRoleName: msk-kafka-load-producer
+      namespace: msk-kafka-load
       replicas: 1
       mainContainer:
         image: 528451384384.dkr.ecr.us-west-2.amazonaws.com/smsk-kafka-load:v2.5.1
         command:
         - "/srv/kafka/bin/kafka-producer-perf-test.sh"
         - "--topic"
-        - "test-1"
+        - "dp-test-onboarding"
         - "--num-records"
         - "1000000000000"
         - "--throughput"
         - "20000"
         - "--producer-props"
-        - "bootstrap.servers=kafka-kafka.dp-sandbox.segment.local:9092"
+        - "bootstrap.servers=kafka.dataplatform.segment.local:9092"
         - "--record-size"
         - "100"
         resources:
