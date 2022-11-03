@@ -23,7 +23,7 @@ spec:
         - "--num-records"
         - "1000000000000"
         - "--throughput"
-        - "20000"
+        - "5000"
         - "--producer-props"
         - "bootstrap.servers=kafka-kafka.dp-sandbox.segment.local:9092"
         - "--record-size"
@@ -31,6 +31,6 @@ spec:
         resources:
           limits:
             cpu: 0.5
-            memory: 256M
+            memory: 512M
         ctlstore:
           disabled: true
