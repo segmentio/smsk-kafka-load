@@ -14,7 +14,7 @@ spec:
       namespace: kafka-perf-test
       replicas: 1
       mainContainer:
-        image: 528451384384.dkr.ecr.us-west-2.amazonaws.com/kafka-k8s:2.8.1-3
+        image: 528451384384.dkr.ecr.us-west-2.amazonaws.com/smsk-kafka-load:v2.8.1
         command:
         - "/srv/kafka/bin/kafka-console-consumer.sh"
         - "--topic"
