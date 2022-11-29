@@ -3,7 +3,7 @@ kind: SegmentApplicationExperimental
 cell: core
 metadata:
   name: consumer-perf-test
-  namespace: consumer-perf-test
+  namespace: kafka-perf-test
 spec:
   targets:
   - name: consumer-perf-test
