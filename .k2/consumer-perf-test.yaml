@@ -1,0 +1,31 @@
+apiVersion: platform.segment.com/v1alpha1
+kind: SegmentApplicationExperimental
+cell: core
+metadata:
+  name: consumer-perf-test
+  namespace: consumer-perf-test
+spec:
+  targets:
+  - name: consumer-perf-test
+    cluster: stage:us-west-2:dp-sandbox
+    pool: producer_consumer
+    replicatedService:
+      iamRoleName: kafka-perf-test
+      namespace: kafka-perf-test
+      replicas: 1
+      mainContainer:
+        image: 528451384384.dkr.ecr.us-west-2.amazonaws.com/smsk-kafka-load:v2.8.1
+        command:
+        - "/srv/kafka/bin/kafka-console-consumer.sh"
+        - "--topic"
+        - "test-1"
+        - "--group"
+        - "test-consumer-1"
+        - "--bootstrap-server=kafka-kafka.sre-compute.segment.local:9092" 
+        - "--from-beginning"
+        resources:
+          limits:
+            cpu: 1
+            memory: 1Gi
+        ctlstore:
+          disabled: true
