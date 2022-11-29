@@ -6,7 +6,7 @@ metadata:
   namespace: kafka-perf-test
 spec:
   targets:
-  - name: consumer-perf-test
+  - name: stage
     cluster: stage:us-west-2:dp-sandbox
     pool: producer_consumer
     replicatedService:
