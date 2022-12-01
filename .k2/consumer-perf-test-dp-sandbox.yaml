@@ -20,10 +20,10 @@ spec:
         command:
         - "/srv/kafka/bin/kafka-console-consumer.sh"
         - "--topic"
-        - "topic-test-2"
+        - "topic-test-1"
         - "--group"
         - "smsk-consumer-1"
-        - "--bootstrap-server=kafka-kafka.dp-sandbox.segment.local:9092"
+        - "--bootstrap-server=kafka-kafka-self-hosted-perf-test.dp-sandbox.segment.local:9092"
         - "--from-beginning"
         resources:
           limits:
