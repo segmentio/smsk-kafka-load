@@ -10,6 +10,7 @@ spec:
   targets:
   - name: stage
     cluster: stage:us-west-2:dp-sandbox
+    pool: producer_consumer
     replicatedService:
       iamRoleName: kafka-self-hosted-perf-test
       namespace: kafka-self-hosted-perf-test
