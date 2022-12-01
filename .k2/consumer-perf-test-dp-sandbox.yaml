@@ -22,7 +22,7 @@ spec:
         - "--topic"
         - "topic-test-1"
         - "--group"
-        - "test-consumer-4"
+        - "smsk-consumer-1"
         - "--bootstrap-server=kafka-kafka.dp-sandbox.segment.local:9092"
         - "--from-beginning"
         resources:
