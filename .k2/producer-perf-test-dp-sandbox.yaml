@@ -14,7 +14,7 @@ spec:
     replicatedService:
       iamRoleName: kafka-self-hosted-perf-test
       namespace: kafka-self-hosted-perf-test
-      replicas: 3
+      replicas: 1
       mainContainer:
         image: 528451384384.dkr.ecr.us-west-2.amazonaws.com/smsk-kafka-load:v2.8.1
         command:
@@ -24,7 +24,7 @@ spec:
         - "--num-records"
         - "100000000000"
         - "--throughput"
-        - "26666"
+        - "75000"
         - "--producer-props"
         - "bootstrap.servers=kafka-kafka-self-hosted-perf-test.dp-sandbox.segment.local:9092"
         - "buffer.memory=67108864"
