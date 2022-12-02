@@ -24,7 +24,7 @@ spec:
         - "--num-records"
         - "100000000000"
         - "--throughput"
-        - "25000"
+        - "30000"
         - "--producer-props"
         - "bootstrap.servers=kafka-kafka-self-hosted-perf-test.dp-sandbox.segment.local:9092"
         - "buffer.memory=67108864"
