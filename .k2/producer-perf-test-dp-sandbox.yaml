@@ -27,8 +27,9 @@ spec:
         - "100000"
         - "--producer-props"
         - "bootstrap.servers=kafka-kafka-self-hosted-perf-test.dp-sandbox.segment.local:9092"
-        - "buffer.memory=67108864"
-        - "linger.ms=10"
+        - "buffer.memory=671008864"
+        - "batch.size=2000000"
+        - "linger.ms=20"
         - "--record-size"
         - "4000"
         resources:
