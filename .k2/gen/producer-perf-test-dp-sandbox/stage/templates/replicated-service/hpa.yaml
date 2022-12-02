@@ -1,0 +1,26 @@
+---
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: producer-perf-test-dp-sandbox
+  namespace: kafka-self-hosted-perf-test
+  labels:
+    app: producer-perf-test-dp-sandbox
+    k2.segment.com/app: producer-perf-test-dp-sandbox
+    k2.segment.com/repo: smsk-kafka-load
+    k2.segment.com/skipped-checks: "true"
+    segment.com/managed-by: k2
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: producer-perf-test-dp-sandbox
+  minReplicas: 1
+  maxReplicas: 1
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 75
