@@ -22,7 +22,7 @@ spec:
         - "--topic"
         - "topic-test-1"
         - "--num-records"
-        - "100000000000000000"
+        - "100000000000"
         - "--throughput"
         - "100000"
         - "--producer-props"

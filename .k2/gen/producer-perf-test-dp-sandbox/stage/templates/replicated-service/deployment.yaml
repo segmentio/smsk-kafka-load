@@ -9,13 +9,13 @@ metadata:
     k2.segment.com/app: producer-perf-test-dp-sandbox
     k2.segment.com/argocd: "true"
     k2.segment.com/build: 7f0d713
-    k2.segment.com/deploy: 67ef8a252fc681
+    k2.segment.com/deploy: 5f74db46f93561
     k2.segment.com/repo: smsk-kafka-load
     k2.segment.com/skipped-checks: "true"
     segment.com/managed-by: k2
-    version: 7f0d713-67ef8a252fc681
+    version: 7f0d713-5f74db46f93561
   annotations:
-    k2.segment.com/context: '{"appConfigMismatch":false,"appConfigSource":"file://.k2/producer-perf-test-dp-sandbox.yaml","appName":"producer-perf-test-dp-sandbox","argoCDDeploy":true,"argoCDTestDeploy":false,"buildTag":"7f0d713","deployID":"67ef8a252fc681","deployTime":"2022-12-02T11:23:36.510636Z","fullDiffs":false,"host":"V50WMJ429K","image":null,"k2Root":"/Users/rsaiprasanna/.kube/k2","k2Version":"1.3.0","repoBranch":"deploy-consumer","repoName":"smsk-kafka-load","repoSHA":"839607362496952d29712ce7ac424344a336ee68","skipChecks":true,"skipChecksReason":"","targetCluster":"stage:us-west-2:dp-sandbox","targetName":"stage","user":"rsaiprasanna","workingDir":"/Users/rsaiprasanna/Desktop/exp/add_conusmer_smsk_dp/smsk-kafka-load","shardDeployment":false}'
+    k2.segment.com/context: '{"appConfigMismatch":false,"appConfigSource":"file://.k2/producer-perf-test-dp-sandbox.yaml","appName":"producer-perf-test-dp-sandbox","argoCDDeploy":true,"argoCDTestDeploy":false,"buildTag":"7f0d713","deployID":"5f74db46f93561","deployTime":"2022-12-02T11:28:41.970275Z","fullDiffs":false,"host":"V50WMJ429K","image":null,"k2Root":"/Users/rsaiprasanna/.kube/k2","k2Version":"1.3.0","repoBranch":"deploy-consumer","repoName":"smsk-kafka-load","repoSHA":"6f200f61911658bb969e74ab45a1b45ba0338f64","skipChecks":true,"skipChecksReason":"","targetCluster":"stage:us-west-2:dp-sandbox","targetName":"stage","user":"rsaiprasanna","workingDir":"/Users/rsaiprasanna/Desktop/exp/add_conusmer_smsk_dp/smsk-kafka-load","shardDeployment":false}'
 spec:
   strategy:
     {}
@@ -30,13 +30,13 @@ spec:
         k2.segment.com/app: producer-perf-test-dp-sandbox
         k2.segment.com/argocd: "true"
         k2.segment.com/build: 7f0d713
-        k2.segment.com/deploy: 67ef8a252fc681
+        k2.segment.com/deploy: 5f74db46f93561
         k2.segment.com/repo: smsk-kafka-load
         k2.segment.com/skipped-checks: "true"
         segment.com/managed-by: k2
-        version: 7f0d713-67ef8a252fc681
+        version: 7f0d713-5f74db46f93561
       annotations:
-        k2.segment.com/context: '{"appConfigMismatch":false,"appConfigSource":"file://.k2/producer-perf-test-dp-sandbox.yaml","appName":"producer-perf-test-dp-sandbox","argoCDDeploy":true,"argoCDTestDeploy":false,"buildTag":"7f0d713","deployID":"67ef8a252fc681","deployTime":"2022-12-02T11:23:36.510636Z","fullDiffs":false,"host":"V50WMJ429K","image":null,"k2Root":"/Users/rsaiprasanna/.kube/k2","k2Version":"1.3.0","repoBranch":"deploy-consumer","repoName":"smsk-kafka-load","repoSHA":"839607362496952d29712ce7ac424344a336ee68","skipChecks":true,"skipChecksReason":"","targetCluster":"stage:us-west-2:dp-sandbox","targetName":"stage","user":"rsaiprasanna","workingDir":"/Users/rsaiprasanna/Desktop/exp/add_conusmer_smsk_dp/smsk-kafka-load","shardDeployment":false}'
+        k2.segment.com/context: '{"appConfigMismatch":false,"appConfigSource":"file://.k2/producer-perf-test-dp-sandbox.yaml","appName":"producer-perf-test-dp-sandbox","argoCDDeploy":true,"argoCDTestDeploy":false,"buildTag":"7f0d713","deployID":"5f74db46f93561","deployTime":"2022-12-02T11:28:41.970275Z","fullDiffs":false,"host":"V50WMJ429K","image":null,"k2Root":"/Users/rsaiprasanna/.kube/k2","k2Version":"1.3.0","repoBranch":"deploy-consumer","repoName":"smsk-kafka-load","repoSHA":"6f200f61911658bb969e74ab45a1b45ba0338f64","skipChecks":true,"skipChecksReason":"","targetCluster":"stage:us-west-2:dp-sandbox","targetName":"stage","user":"rsaiprasanna","workingDir":"/Users/rsaiprasanna/Desktop/exp/add_conusmer_smsk_dp/smsk-kafka-load","shardDeployment":false}'
       name: producer-perf-test-dp-sandbox
     spec:
       dnsPolicy: None
@@ -65,8 +65,6 @@ spec:
         - "100000"
         - --producer-props
         - bootstrap.servers=kafka-kafka-self-hosted-perf-test.dp-sandbox.segment.local:9092
-        - linger.ms=20
-        - buffer.memory=100000000
         - --record-size
         - "4000"
         env:
