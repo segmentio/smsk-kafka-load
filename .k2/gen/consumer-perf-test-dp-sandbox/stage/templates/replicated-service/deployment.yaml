@@ -9,13 +9,13 @@ metadata:
     k2.segment.com/app: consumer-perf-test-dp-sandbox
     k2.segment.com/argocd: "true"
     k2.segment.com/build: 7f0d713
-    k2.segment.com/deploy: a95f9852384c46
+    k2.segment.com/deploy: 3ad0f28db64b6d
     k2.segment.com/repo: smsk-kafka-load
     k2.segment.com/skipped-checks: "true"
     segment.com/managed-by: k2
-    version: 7f0d713-a95f9852384c46
+    version: 7f0d713-3ad0f28db64b6d
   annotations:
-    k2.segment.com/context: '{"appConfigMismatch":false,"appConfigSource":"file://.k2/consumer-perf-test-dp-sandbox.yaml","appName":"consumer-perf-test-dp-sandbox","argoCDDeploy":true,"argoCDTestDeploy":false,"buildTag":"7f0d713","deployID":"a95f9852384c46","deployTime":"2022-12-05T07:05:15.248183Z","fullDiffs":false,"host":"V50WMJ429K","image":null,"k2Root":"/Users/rsaiprasanna/.kube/k2","k2Version":"1.3.0","repoBranch":"deploy-consumer","repoName":"smsk-kafka-load","repoSHA":"75dd29c4e9f5555955328421c8d4bf632b27f980","skipChecks":true,"skipChecksReason":"","targetCluster":"stage:us-west-2:dp-sandbox","targetName":"stage","user":"rsaiprasanna","workingDir":"/Users/rsaiprasanna/Desktop/exp/add_conusmer_smsk_dp/smsk-kafka-load","shardDeployment":false}'
+    k2.segment.com/context: '{"appConfigMismatch":false,"appConfigSource":"file://.k2/consumer-perf-test-dp-sandbox.yaml","appName":"consumer-perf-test-dp-sandbox","argoCDDeploy":true,"argoCDTestDeploy":false,"buildTag":"7f0d713","deployID":"3ad0f28db64b6d","deployTime":"2022-12-05T07:27:03.094904Z","fullDiffs":false,"host":"V50WMJ429K","image":null,"k2Root":"/Users/rsaiprasanna/.kube/k2","k2Version":"1.3.0","repoBranch":"deploy-consumer","repoName":"smsk-kafka-load","repoSHA":"6cc384ce188ff040fc61f2c31c608ffcea4d2383","skipChecks":true,"skipChecksReason":"","targetCluster":"stage:us-west-2:dp-sandbox","targetName":"stage","user":"rsaiprasanna","workingDir":"/Users/rsaiprasanna/Desktop/exp/add_conusmer_smsk_dp/smsk-kafka-load","shardDeployment":false}'
 spec:
   strategy:
     {}
@@ -30,13 +30,13 @@ spec:
         k2.segment.com/app: consumer-perf-test-dp-sandbox
         k2.segment.com/argocd: "true"
         k2.segment.com/build: 7f0d713
-        k2.segment.com/deploy: a95f9852384c46
+        k2.segment.com/deploy: 3ad0f28db64b6d
         k2.segment.com/repo: smsk-kafka-load
         k2.segment.com/skipped-checks: "true"
         segment.com/managed-by: k2
-        version: 7f0d713-a95f9852384c46
+        version: 7f0d713-3ad0f28db64b6d
       annotations:
-        k2.segment.com/context: '{"appConfigMismatch":false,"appConfigSource":"file://.k2/consumer-perf-test-dp-sandbox.yaml","appName":"consumer-perf-test-dp-sandbox","argoCDDeploy":true,"argoCDTestDeploy":false,"buildTag":"7f0d713","deployID":"a95f9852384c46","deployTime":"2022-12-05T07:05:15.248183Z","fullDiffs":false,"host":"V50WMJ429K","image":null,"k2Root":"/Users/rsaiprasanna/.kube/k2","k2Version":"1.3.0","repoBranch":"deploy-consumer","repoName":"smsk-kafka-load","repoSHA":"75dd29c4e9f5555955328421c8d4bf632b27f980","skipChecks":true,"skipChecksReason":"","targetCluster":"stage:us-west-2:dp-sandbox","targetName":"stage","user":"rsaiprasanna","workingDir":"/Users/rsaiprasanna/Desktop/exp/add_conusmer_smsk_dp/smsk-kafka-load","shardDeployment":false}'
+        k2.segment.com/context: '{"appConfigMismatch":false,"appConfigSource":"file://.k2/consumer-perf-test-dp-sandbox.yaml","appName":"consumer-perf-test-dp-sandbox","argoCDDeploy":true,"argoCDTestDeploy":false,"buildTag":"7f0d713","deployID":"3ad0f28db64b6d","deployTime":"2022-12-05T07:27:03.094904Z","fullDiffs":false,"host":"V50WMJ429K","image":null,"k2Root":"/Users/rsaiprasanna/.kube/k2","k2Version":"1.3.0","repoBranch":"deploy-consumer","repoName":"smsk-kafka-load","repoSHA":"6cc384ce188ff040fc61f2c31c608ffcea4d2383","skipChecks":true,"skipChecksReason":"","targetCluster":"stage:us-west-2:dp-sandbox","targetName":"stage","user":"rsaiprasanna","workingDir":"/Users/rsaiprasanna/Desktop/exp/add_conusmer_smsk_dp/smsk-kafka-load","shardDeployment":false}'
       name: consumer-perf-test-dp-sandbox
     spec:
       dnsPolicy: None
@@ -105,7 +105,7 @@ spec:
         resources:
           limits:
             cpu: "1"
-            memory: 1536Mi
+            memory: 3Gi
       topologySpreadConstraints:
       - labelSelector:
           matchLabels:
