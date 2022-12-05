@@ -24,7 +24,7 @@ spec:
         - "--num-records"
         - "100000000000"
         - "--throughput"
-        - "25000"
+        - "12500"
         - "--producer-props"
         - "bootstrap.servers=kafka-kafka-self-hosted-perf-test.dp-sandbox.segment.local:9092"
         - "compression=zstd"
@@ -32,7 +32,7 @@ spec:
         - "batch.size=2000000"
         - "linger.ms=15"
         - "--record-size"
-        - "4000"
+        - "8000"
         resources:
           limits:
             cpu: 1
