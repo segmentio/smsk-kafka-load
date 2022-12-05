@@ -24,14 +24,14 @@ spec:
         - "--num-records"
         - "100000000000"
         - "--throughput"
-        - "13750"
+        - "50000"
         - "--producer-props"
         - "bootstrap.servers=kafka-kafka-self-hosted-perf-test.dp-sandbox.segment.local:9092"
         - "buffer.memory=67108864"
         - "batch.size=2000000"
         - "linger.ms=15"
         - "--record-size"
-        - "8000"
+        - "4000"
         resources:
           limits:
             cpu: 1
