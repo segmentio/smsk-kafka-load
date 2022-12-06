@@ -15,8 +15,8 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: producer-perf-test-dp-sandbox
-  minReplicas: 1
-  maxReplicas: 1
+  minReplicas: 6
+  maxReplicas: 6
   metrics:
     - type: Resource
       resource:
