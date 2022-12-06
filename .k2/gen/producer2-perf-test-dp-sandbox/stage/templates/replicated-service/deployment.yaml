@@ -2,42 +2,42 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: producer-perf-test-dp-sandbox
+  name: producer2-perf-test-dp-sandbox
   namespace: kafka-self-hosted-perf-test
   labels:
-    app: producer-perf-test-dp-sandbox
-    k2.segment.com/app: producer-perf-test-dp-sandbox
+    app: producer2-perf-test-dp-sandbox
+    k2.segment.com/app: producer2-perf-test-dp-sandbox
     k2.segment.com/argocd: "true"
     k2.segment.com/build: 7f0d713
-    k2.segment.com/deploy: 9e7e2f1f02e303
+    k2.segment.com/deploy: 7af040caec9274
     k2.segment.com/repo: smsk-kafka-load
     k2.segment.com/skipped-checks: "true"
     segment.com/managed-by: k2
-    version: 7f0d713-9e7e2f1f02e303
+    version: 7f0d713-7af040caec9274
   annotations:
-    k2.segment.com/context: '{"appConfigMismatch":false,"appConfigSource":"file://.k2/producer-perf-test-dp-sandbox.yaml","appName":"producer-perf-test-dp-sandbox","argoCDDeploy":true,"argoCDTestDeploy":false,"buildTag":"7f0d713","deployID":"9e7e2f1f02e303","deployTime":"2022-12-06T09:40:36.511963Z","fullDiffs":false,"host":"V50WMJ429K","image":null,"k2Root":"/Users/rsaiprasanna/.kube/k2","k2Version":"1.5.0","repoBranch":"deploy-consumer","repoName":"smsk-kafka-load","repoSHA":"e698d6d6a2b1a01f80603ca05a9ea979c4cfdc2a","skipChecks":true,"skipChecksReason":"","targetCluster":"stage:us-west-2:dp-sandbox","targetName":"stage","user":"rsaiprasanna","workingDir":"/Users/rsaiprasanna/Desktop/exp/add_conusmer_smsk_dp/smsk-kafka-load","shardDeployment":false}'
+    k2.segment.com/context: '{"appConfigMismatch":false,"appConfigSource":"file://.k2/producer2-perf-test-dp-sandbox.yaml","appName":"producer2-perf-test-dp-sandbox","argoCDDeploy":true,"argoCDTestDeploy":false,"buildTag":"7f0d713","deployID":"7af040caec9274","deployTime":"2022-12-06T09:36:27.12314Z","fullDiffs":false,"host":"V50WMJ429K","image":null,"k2Root":"/Users/rsaiprasanna/.kube/k2","k2Version":"1.5.0","repoBranch":"deploy-consumer","repoName":"smsk-kafka-load","repoSHA":"e698d6d6a2b1a01f80603ca05a9ea979c4cfdc2a","skipChecks":true,"skipChecksReason":"","targetCluster":"stage:us-west-2:dp-sandbox","targetName":"stage","user":"rsaiprasanna","workingDir":"/Users/rsaiprasanna/Desktop/exp/add_conusmer_smsk_dp/smsk-kafka-load","shardDeployment":false}'
 spec:
   strategy:
     {}
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: producer-perf-test-dp-sandbox
+      app: producer2-perf-test-dp-sandbox
   template:
     metadata:
       labels:
-        app: producer-perf-test-dp-sandbox
-        k2.segment.com/app: producer-perf-test-dp-sandbox
+        app: producer2-perf-test-dp-sandbox
+        k2.segment.com/app: producer2-perf-test-dp-sandbox
         k2.segment.com/argocd: "true"
         k2.segment.com/build: 7f0d713
-        k2.segment.com/deploy: 9e7e2f1f02e303
+        k2.segment.com/deploy: 7af040caec9274
         k2.segment.com/repo: smsk-kafka-load
         k2.segment.com/skipped-checks: "true"
         segment.com/managed-by: k2
-        version: 7f0d713-9e7e2f1f02e303
+        version: 7f0d713-7af040caec9274
       annotations:
-        k2.segment.com/context: '{"appConfigMismatch":false,"appConfigSource":"file://.k2/producer-perf-test-dp-sandbox.yaml","appName":"producer-perf-test-dp-sandbox","argoCDDeploy":true,"argoCDTestDeploy":false,"buildTag":"7f0d713","deployID":"9e7e2f1f02e303","deployTime":"2022-12-06T09:40:36.511963Z","fullDiffs":false,"host":"V50WMJ429K","image":null,"k2Root":"/Users/rsaiprasanna/.kube/k2","k2Version":"1.5.0","repoBranch":"deploy-consumer","repoName":"smsk-kafka-load","repoSHA":"e698d6d6a2b1a01f80603ca05a9ea979c4cfdc2a","skipChecks":true,"skipChecksReason":"","targetCluster":"stage:us-west-2:dp-sandbox","targetName":"stage","user":"rsaiprasanna","workingDir":"/Users/rsaiprasanna/Desktop/exp/add_conusmer_smsk_dp/smsk-kafka-load","shardDeployment":false}'
-      name: producer-perf-test-dp-sandbox
+        k2.segment.com/context: '{"appConfigMismatch":false,"appConfigSource":"file://.k2/producer2-perf-test-dp-sandbox.yaml","appName":"producer2-perf-test-dp-sandbox","argoCDDeploy":true,"argoCDTestDeploy":false,"buildTag":"7f0d713","deployID":"7af040caec9274","deployTime":"2022-12-06T09:36:27.12314Z","fullDiffs":false,"host":"V50WMJ429K","image":null,"k2Root":"/Users/rsaiprasanna/.kube/k2","k2Version":"1.5.0","repoBranch":"deploy-consumer","repoName":"smsk-kafka-load","repoSHA":"e698d6d6a2b1a01f80603ca05a9ea979c4cfdc2a","skipChecks":true,"skipChecksReason":"","targetCluster":"stage:us-west-2:dp-sandbox","targetName":"stage","user":"rsaiprasanna","workingDir":"/Users/rsaiprasanna/Desktop/exp/add_conusmer_smsk_dp/smsk-kafka-load","shardDeployment":false}'
+      name: producer2-perf-test-dp-sandbox
     spec:
       dnsPolicy: None
       dnsConfig:
@@ -51,7 +51,7 @@ spec:
         options:
         - name: ndot
           value: '2'
-      serviceAccountName: producer-perf-test-dp-sandbox
+      serviceAccountName: producer2-perf-test-dp-sandbox
       nodeSelector:
         segment.com/pool: producer_consumer
       containers:
@@ -78,9 +78,9 @@ spec:
         - name: GOMAXPROCS
           value: "1"
         - name: K8S_CONTAINER_NAME
-          value: producer-perf-test-dp-sandbox
+          value: producer2-perf-test-dp-sandbox
         - name: K8S_DEPLOYMENT
-          value: producer-perf-test-dp-sandbox
+          value: producer2-perf-test-dp-sandbox
         - name: K8S_NODE
           valueFrom:
             fieldRef:
@@ -108,7 +108,7 @@ spec:
         - name: SEGMENT_CELL
           value: core
         image: 528451384384.dkr.ecr.us-west-2.amazonaws.com/smsk-kafka-load:v2.8.1
-        name: producer-perf-test-dp-sandbox
+        name: producer2-perf-test-dp-sandbox
         resources:
           limits:
             cpu: "1"
@@ -116,7 +116,7 @@ spec:
       topologySpreadConstraints:
       - labelSelector:
           matchLabels:
-            app: producer-perf-test-dp-sandbox
+            app: producer2-perf-test-dp-sandbox
         maxSkew: 1
         topologyKey: topology.kubernetes.io/zone
         whenUnsatisfiable: ScheduleAnyway

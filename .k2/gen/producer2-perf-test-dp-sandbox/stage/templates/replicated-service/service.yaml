@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: producer2-perf-test-dp-sandbox
+    k2.segment.com/app: producer2-perf-test-dp-sandbox
+    k2.segment.com/repo: smsk-kafka-load
+    k2.segment.com/skipped-checks: "true"
+    segment.com/managed-by: k2
+  name: producer2-perf-test-dp-sandbox
+  namespace: kafka-self-hosted-perf-test
+spec:
+  clusterIP: None
+  ports:
+  selector:
+    app: producer2-perf-test-dp-sandbox
+
