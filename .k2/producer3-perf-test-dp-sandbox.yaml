@@ -14,7 +14,7 @@ spec:
     replicatedService:
       iamRoleName: kafka-self-hosted-perf-test
       namespace: kafka-self-hosted-perf-test
-      replicas: 60
+      replicas: 65
       mainContainer:
         image: 528451384384.dkr.ecr.us-west-2.amazonaws.com/smsk-kafka-load:v2.8.1
         command:
@@ -35,7 +35,7 @@ spec:
         - "16000"
         resources:
           limits:
-            cpu: 1.5
-            memory: 1Gi
+            cpu: 0.8
+            memory: 0.8Gi
         ctlstore:
           disabled: true
