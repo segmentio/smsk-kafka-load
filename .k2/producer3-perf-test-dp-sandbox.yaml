@@ -24,7 +24,7 @@ spec:
         - "--num-records"
         - "100000000000"
         - "--throughput"
-        - "18750"
+        - "187500"
         - "--producer-props"
         - "bootstrap.servers=kafka-kafka-self-hosted-perf-test.dp-sandbox.segment.local:9092"
         - "compression.type=zstd"
