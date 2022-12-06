@@ -4,7 +4,7 @@ apiVersion: platform.segment.com/v1alpha1
 kind: SegmentApplicationExperimental
 cell: core
 metadata:
-  name: producer-perf-test-dp-sandbox
+  name: producer2-perf-test-dp-sandbox
   namespace: kafka-self-hosted-perf-test
 spec:
   targets:
@@ -14,7 +14,7 @@ spec:
     replicatedService:
       iamRoleName: kafka-self-hosted-perf-test
       namespace: kafka-self-hosted-perf-test
-      replicas: 2
+      replicas: 1
       mainContainer:
         image: 528451384384.dkr.ecr.us-west-2.amazonaws.com/smsk-kafka-load:v2.8.1
         command:
