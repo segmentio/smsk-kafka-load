@@ -30,7 +30,7 @@ spec:
         - "compression.type=zstd"
         - "buffer.memory=256108864"
         - "batch.size=160000000"
-        - "linger.ms=25"
+        - "linger.ms=40"
         - "--record-size"
         - "16000"
         resources:
