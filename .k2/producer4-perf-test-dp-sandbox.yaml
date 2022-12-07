@@ -20,7 +20,7 @@ spec:
         command:
         - "/srv/kafka/bin/kafka-producer-perf-test.sh"
         - "--topic"
-        - "topic-test-2"
+        - "topic-test-1"
         - "--num-records"
         - "100000000000"
         - "--throughput"
