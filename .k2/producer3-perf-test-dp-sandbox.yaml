@@ -35,7 +35,7 @@ spec:
         - "16000"
         resources:
           limits:
-            cpu: 4
-            memory: 5Gi
+            cpu: 8
+            memory: 8Gi
         ctlstore:
           disabled: true
