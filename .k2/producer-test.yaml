@@ -33,7 +33,7 @@ spec:
         - "batch.size=1000000"
         - "linger.ms=15"
         - "--record-size"
-        - "800000"
+        - "400000"
         resources:
           limits:
             cpu: 1
