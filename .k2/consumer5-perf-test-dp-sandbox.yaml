@@ -1,0 +1,33 @@
+# deploy - k2 deploy app consumer-stage-usw2-dp-sandbox -t consumer-stage-usw2-dp-sandbox -b <build> --argocd --skip-checks
+# delete - k2 delete app consumer-stage-usw2-dp-sandbox -t consumer-stage-usw2-dp-sandbox
+apiVersion: platform.segment.com/v1alpha1
+kind: SegmentApplicationExperimental
+cell: core
+metadata:
+  name: consumer5-perf-test-dp-sandbox
+  namespace: kafka-self-hosted-perf-test
+spec:
+  targets:
+  - name: stage
+    cluster: stage:us-west-2:dp-sandbox
+    pool: producer_consumer
+    replicatedService:
+      iamRoleName: kafka-self-hosted-perf-test
+      namespace: kafka-self-hosted-perf-test
+      replicas: 3
+      mainContainer:
+        image: 528451384384.dkr.ecr.us-west-2.amazonaws.com/smsk-kafka-load:v2.8.1
+        command:
+        - "/srv/kafka/bin/kafka-console-consumer.sh"
+        - "--topic"
+        - "topic-test-1"
+        - "--group"
+        - "smsk-consumer-2"
+        - "--bootstrap-server=kafka-kafka-self-hosted-perf-test.dp-sandbox.segment.local:9092"
+        - "--from-beginning"
+        resources:
+          limits:
+            cpu: 1
+            memory: 6Gi
+        ctlstore:
+          disabled: true

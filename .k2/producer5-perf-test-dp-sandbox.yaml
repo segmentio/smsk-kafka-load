@@ -4,7 +4,7 @@ apiVersion: platform.segment.com/v1alpha1
 kind: SegmentApplicationExperimental
 cell: core
 metadata:
-  name: producer4-perf-test-dp-sandbox
+  name: producer5-perf-test-dp-sandbox
   namespace: kafka-self-hosted-perf-test
 spec:
   targets:
@@ -35,7 +35,7 @@ spec:
         - "4000"
         resources:
           limits:
-            cpu: 3
+            cpu: 1
             memory: 2Gi
         ctlstore:
           disabled: true
