@@ -14,7 +14,7 @@ spec:
     replicatedService:
       iamRoleName: kafka-self-hosted-perf-test
       namespace: kafka-self-hosted-perf-test
-      replicas: 6
+      replicas: 3
       mainContainer:
         image: 528451384384.dkr.ecr.us-west-2.amazonaws.com/smsk-kafka-load:v2.8.1
         command:
@@ -24,18 +24,18 @@ spec:
         - "--num-records"
         - "100000000000"
         - "--throughput"
-        - "187500"
+        - "25000"
         - "--producer-props"
         - "bootstrap.servers=kafka-kafka-self-hosted-perf-test.dp-sandbox.segment.local:9092"
         - "compression.type=zstd"
         - "buffer.memory=67108864"
         - "batch.size=20000000"
-        - "linger.ms=0"
+        - "linger.ms=15"
         - "--record-size"
-        - "16000"
+        - "4000"
         resources:
           limits:
-            cpu: 2
-            memory: 1Gi
+            cpu: 1
+            memory: 2Gi
         ctlstore:
           disabled: true
