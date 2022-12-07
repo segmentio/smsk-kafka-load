@@ -20,7 +20,7 @@ spec:
         command:
         - "/srv/kafka/bin/kafka-console-consumer.sh"
         - "--topic"
-        - "topic-test-1"
+        - "topic-test-2"
         - "--group"
         - "smsk-consumer-1"
         - "--bootstrap-server=kafka-kafka-self-hosted-perf-test.dp-sandbox.segment.local:9092"
