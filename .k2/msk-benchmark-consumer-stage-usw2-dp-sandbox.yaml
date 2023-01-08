@@ -1,0 +1,29 @@
+apiVersion: platform.segment.com/v1alpha1
+kind: SegmentApplicationExperimental
+cell: core
+metadata:
+  name: msk-benchmark-consumer-stage-usw2-dp-sandbox
+  namespace: msk-kafka-load
+spec:
+  targets:
+  - name: consumer-stage-usw2-dp-sandbox
+    cluster: stage:us-west-2:dp-sandbox
+    pool : blackhole-consumer-kafka-perf-test
+    replicatedService:
+      iamRoleName: msk-kafka-load-consumer
+      namespace: msk-kafka-load
+      replicas: 1
+      mainContainer:
+        image: 528451384384.dkr.ecr.us-west-2.amazonaws.com/smsk-kafka-load:v2.5.1
+        command:
+        - "/srv/kafka/bin/kafka-console-consumer.sh"
+        - "--topic"
+        - "test-1"
+        - "--bootstrap-server=msk.dp-sandbox.segment.local:9092"
+        - "--from-beginning"
+        resources:
+          limits:
+            cpu: 0.5
+            memory: 256M
+        ctlstore:
+          disabled: true
