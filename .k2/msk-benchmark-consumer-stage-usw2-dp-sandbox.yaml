@@ -2,7 +2,7 @@ apiVersion: platform.segment.com/v1alpha1
 kind: SegmentApplicationExperimental
 cell: core
 metadata:
-  name: msk-benchmark-consumer-stage-usw2-dp-sandbox-non-cg
+  name: msk-benchmark-consumer-stage-usw2-dp-sandbox
   namespace: msk-kafka-load
 spec:
   targets:
