@@ -4,7 +4,7 @@ apiVersion: platform.segment.com/v1alpha1
 kind: SegmentApplicationExperimental
 cell: core
 metadata:
-  name: msk-benchmark-producer-stage-usw2-dp-sandbox-t10000-s1000-b10000
+  name: msk-benchmark-producer-t10000-s1000-b10000
   namespace: msk-kafka-load
 spec:
   targets:
