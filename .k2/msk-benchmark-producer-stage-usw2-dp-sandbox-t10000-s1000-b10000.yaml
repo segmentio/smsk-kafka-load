@@ -1,0 +1,38 @@
+# deploy - k2 deploy app producer-msk-stage-usw2-dp-sandbox -t producer-stage-usw2-dp-sandbox -b <build> --argocd --skip-checks
+# delete - k2 delete app producer-msk-stage-usw2-dp-sandbox -t producer-stage-usw2-dp-sandbox
+apiVersion: platform.segment.com/v1alpha1
+kind: SegmentApplicationExperimental
+cell: core
+metadata:
+  name: msk-benchmark-producer-stage-usw2-dp-sandbox-t10000-s1000-b10000
+  namespace: msk-kafka-load
+spec:
+  targets:
+  - name: producer-stage-usw2-dp-sandbox
+    cluster: stage:us-west-2:dp-sandbox
+    pool:  msk-worker
+    replicatedService:
+      iamRoleName: msk-kafka-load-producer
+      namespace: msk-kafka-load
+      replicas: 1
+      mainContainer:
+        image: 528451384384.dkr.ecr.us-west-2.amazonaws.com/smsk-kafka-load:v2.5.1
+        command:
+        - "/srv/kafka/bin/kafka-producer-perf-test.sh"
+        - "--topic"
+        - "test-1"
+        - "--num-records"
+        - "100000000"
+        - "--throughput"
+        - "10000"
+        - "--producer-props"
+        - "bootstrap.servers=msk.dp-sandbox.segment.local:9092"
+        - "batch.size=10000"
+        - "--record-size"
+        - "1000"
+        resources:
+          limits:
+            cpu: 0.5
+            memory: 256M
+        ctlstore:
+          disabled: true
