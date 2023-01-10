@@ -20,6 +20,6 @@ spec:
         resources:
           limits:
               cpu: 1
-              memory: 4096Mi
+              memory: 2048Mi
         ctlstore:
           disabled: true
