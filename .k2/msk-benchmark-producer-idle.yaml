@@ -1,0 +1,24 @@
+apiVersion: platform.segment.com/v1alpha1
+kind: SegmentApplicationExperimental
+cell: core
+metadata:
+  name: msk-benchmark-producer-idle
+  namespace: msk-kafka-load
+spec:
+  targets:
+  - name: producer-stage-usw2-dp-sandbox
+    cluster: stage:us-west-2:dp-sandbox
+    pool:  msk-worker
+    replicatedService:
+      iamRoleName: msk-kafka-load-producer
+      namespace: msk-kafka-load
+      replicas: 1
+      mainContainer:
+        image: 528451384384.dkr.ecr.us-west-2.amazonaws.com/smsk-kafka-load:v2.5.1
+        command: "/bin/bash"
+        resources:
+          limits:
+              cpu: 1
+              memory: 4096Mi
+        ctlstore:
+          disabled: true
