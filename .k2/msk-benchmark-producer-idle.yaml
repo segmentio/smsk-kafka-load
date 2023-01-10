@@ -15,7 +15,8 @@ spec:
       replicas: 1
       mainContainer:
         image: 528451384384.dkr.ecr.us-west-2.amazonaws.com/smsk-kafka-load:v2.5.1
-        command: "/bin/bash"
+        command: 
+        - "/bin/bash"
         resources:
           limits:
               cpu: 1
